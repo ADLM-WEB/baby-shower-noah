@@ -1,0 +1,1527 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Baby Shower de Noah Valentín</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --azul:#2c4d70;
+  --oro:#b49050;
+  --tinta:#47566a;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  background:#dfeaf0;
+  color:var(--tinta);
+  font-family:'Cormorant Garamond',Georgia,serif;
+}
+
+button,a{font:inherit}
+button{cursor:pointer}
+
+.pagina{
+  max-width:480px;
+  margin:auto;
+  overflow:hidden;
+  position:relative;
+  background:#faf8f4;
+  box-shadow:0 5px 30px #243d552b;
+}
+
+.papel{
+  background:
+    radial-gradient(ellipse at 12% 7%,#e6eff3,transparent 36%),
+    radial-gradient(ellipse at 88% 90%,#f0e7d9,transparent 38%),
+    linear-gradient(140deg,#fdfbf7,#f8f5ef 60%,#fcfaf5);
+}
+
+.papel::before,
+.papel::after{
+  content:"";
+  position:absolute;
+  inset:12px;
+  border:1px solid #c7ac7988;
+  pointer-events:none;
+}
+
+.papel::after{
+  inset:21px;
+  border-color:#d9c8a67c;
+}
+
+.oculto{display:none!important}
+
+/* =================================
+   PORTADA
+================================= */
+
+#inicio{
+  position:relative;
+  min-height:100svh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  isolation:isolate;
+  overflow:hidden;
+  transition:opacity .7s,transform .7s;
+}
+
+#inicio.saliendo{
+  opacity:0;
+  transform:scale(1.03);
+}
+
+.portada{
+  position:relative;
+  z-index:2;
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:42px 15px 35px;
+}
+
+.encabezado{
+  width:100%;
+  max-width:300px;
+  margin:auto;
+  text-align:center;
+  position:relative;
+  z-index:5;
+}
+
+.corona{
+  display:block;
+  color:var(--oro);
+  font-size:29px;
+  line-height:1;
+}
+
+.adornito{
+  color:#aa8749;
+  font-size:17px;
+  letter-spacing:2px;
+  margin:7px auto;
+  white-space:nowrap;
+}
+
+.encabezado p{
+  font-size:clamp(24px,6vw,29px);
+  line-height:1.08;
+  font-weight:600;
+  color:#354d68;
+  text-shadow:0 1px #fff9;
+  margin:9px 0;
+}
+
+.encabezado strong{
+  display:block;
+  color:#a58346;
+  font-weight:600;
+  margin-top:6px;
+}
+
+.flor-esquina,
+.flor-inferior{
+  position:absolute;
+  pointer-events:none;
+}
+
+.flor-esquina{
+  right:-53px;
+  top:-24px;
+  width:145px;
+  opacity:.85;
+}
+
+.flor-inferior{
+  left:-64px;
+  bottom:-37px;
+  width:146px;
+  transform:scaleX(-1);
+  opacity:.62;
+}
+
+/* =================================
+   GLOBOS Y SOBRE
+================================= */
+
+.escena{
+  width:min(90vw,376px);
+  height:355px;
+  position:relative;
+  margin:100px auto 0;
+}
+
+.globos{
+  --tamano-globos:232px;
+  position:absolute;
+  z-index:1;
+  width:var(--tamano-globos);
+  height:auto;
+  max-width:none;
+  left:calc(var(--tamano-globos)*-0.458);
+  top:calc(24px - var(--tamano-globos)*1.002);
+  pointer-events:none;
+}
+
+.sobre-boton{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  z-index:2;
+  border:0;
+  padding:0;
+  background:none;
+  filter:drop-shadow(0 15px 12px #65606b37);
+}
+
+.sobre{
+  position:absolute;
+  left:0;
+  right:0;
+  top:24px;
+  height:218px;
+  overflow:hidden;
+  border:2px solid #b49570;
+  border-radius:3px;
+  background:linear-gradient(140deg,#f9f4eb,#eae6e1);
+  box-shadow:0 0 0 1px #f6e5c7,inset 0 0 13px #9c80661e;
+}
+
+.sobre::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(#829cb32d 1px,transparent 2px) 0 0/24px 24px,
+    repeating-linear-gradient(48deg,transparent 0 34px,#91afc31b 35px 36px,transparent 37px 70px);
+}
+
+.pliegue{
+  position:absolute;
+  inset:0;
+}
+
+.pliegue.izq{
+  clip-path:polygon(0 0,51% 56%,0 100%);
+  background:linear-gradient(130deg,#efe7e1,#e9e5e0);
+}
+
+.pliegue.der{
+  clip-path:polygon(100% 0,49% 56%,100% 100%);
+  background:linear-gradient(235deg,#f7efe7,#e6e2dd);
+}
+
+.pliegue.abajo{
+  clip-path:polygon(0 100%,50% 46%,100% 100%);
+  background:linear-gradient(#f4ece5,#e8dfd8);
+}
+
+.solapa{
+  position:absolute;
+  inset:-2px -2px 39px;
+  clip-path:polygon(0 0,100% 0,50% 96%);
+  background:
+    radial-gradient(circle at 20% 18%,#bed1df66 1px,transparent 2px) 0 0/24px 23px,
+    repeating-linear-gradient(130deg,#faf7f0 0 31px,#d9e5ed 32px 33px,#f8f4ed 34px 62px);
+  transform-origin:top center;
+  transition:transform .95s ease;
+  z-index:2;
+}
+
+.linea-interior{
+  position:absolute;
+  inset:9px;
+  border:1px solid #d0b3858c;
+  pointer-events:none;
+  z-index:3;
+  box-shadow:inset 0 0 0 4px #fff9;
+}
+
+.sello{
+  position:absolute;
+  left:50%;
+  top:158px;
+  transform:translateX(-50%);
+  width:62px;
+  height:62px;
+  display:grid;
+  place-items:center;
+  border:3px double #f8e4b9;
+  border-radius:50%;
+  background:radial-gradient(circle at 34% 25%,#f1ddb1,#c59c52 59%,#946a30);
+  box-shadow:0 3px 9px #66492750;
+  color:#765222;
+  font-size:25px;
+  z-index:7;
+  transition:opacity .3s;
+}
+
+.sello::after{
+  content:"";
+  position:absolute;
+  inset:6px;
+  border:1px solid #986e30a0;
+  border-radius:50%;
+}
+
+.cachorro{
+  position:absolute;
+  width:118px;
+  left:50%;
+  bottom:7px;
+  transform-origin:center bottom;
+  pointer-events:none;
+  z-index:6;
+  animation:moverCachorro 3.5s ease-in-out infinite;
+}
+
+.sobre-boton.abierto .solapa{
+  transform:rotateX(165deg);
+}
+
+.sobre-boton.abierto .sello{
+  opacity:0;
+}
+
+.indicacion{
+  position:relative;
+  z-index:4;
+  text-align:center;
+  color:#385779;
+  letter-spacing:3px;
+  font-size:17px;
+  font-weight:600;
+  margin-top:-2px;
+}
+
+.indicacion small{
+  display:block;
+  color:#b49252;
+  letter-spacing:5px;
+  font-size:14px;
+  margin-top:5px;
+}
+
+@keyframes moverCachorro{
+  0%,100%{transform:translateX(-50%) translateY(0)}
+  25%{transform:translateX(-50%) translateY(-4px) rotate(-2deg)}
+  50%{transform:translateX(-50%) translateY(-8px)}
+  75%{transform:translateX(-50%) translateY(-4px) rotate(2deg)}
+}
+
+/* =================================
+   INVITACIÓN INTERIOR
+================================= */
+
+#invitacion{
+  display:none;
+  position:relative;
+  min-height:100svh;
+  padding:38px 24px 26px;
+  isolation:isolate;
+  overflow:hidden;
+}
+
+#invitacion.visible{
+  display:block;
+  animation:aparecer .9s ease both;
+}
+
+.deco-flor-izq,
+.deco-flor-der,
+.deco-globos-izq{
+  position:absolute;
+  pointer-events:none;
+}
+
+.deco-flor-izq{
+  width:146px;
+  left:-56px;
+  top:-30px;
+  opacity:.8;
+}
+
+.deco-flor-der{
+  width:122px;
+  right:-22px;
+  top:86px;
+  opacity:.72;
+  transform:rotate(10deg);
+}
+
+.deco-globos-izq{
+  width:122px;
+  left:-36px;
+  top:76px;
+  opacity:.92;
+}
+
+.contenido{
+  position:relative;
+  z-index:2;
+  text-align:center;
+}
+
+.corona-interior{
+  font-size:32px;
+  color:var(--oro);
+  margin:20px 0 13px;
+}
+
+/* =================================
+   NOMBRE DEL BEBÉ
+================================= */
+
+.subtitulo{
+  position:relative;
+  z-index:3;
+  font-size:clamp(12px,3.4vw,15px);
+  letter-spacing:2.2px;
+  line-height:1.5;
+  font-weight:600;
+  color:#5a6780;
+  margin:12px auto 0;
+  text-align:center;
+}
+
+.nombre{
+  position:relative;
+  z-index:2;
+  font-family:'Great Vibes',cursive;
+  color:var(--oro);
+  font-size:clamp(66px,17vw,90px);
+  font-weight:400;
+  line-height:1.17;
+  text-align:center;
+  margin:35px auto 13px;
+  padding-top:8px;
+  overflow:visible;
+  text-shadow:0 1px 0 #fff9;
+}
+
+.nombre span{
+  display:block;
+  line-height:1.17;
+}
+
+.nombre span+span{
+  margin-top:2px;
+}
+
+.orno-nombre{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  width:100%;
+  max-width:360px;
+  margin:12px auto 16px;
+  color:var(--oro);
+  font-size:15px;
+}
+
+.orno-nombre::before,
+.orno-nombre::after{
+  content:"";
+  height:1px;
+  flex:1;
+  background:linear-gradient(to right,transparent,#c6a667,transparent);
+}
+
+.mensaje{
+  max-width:312px;
+  margin:10px auto 6px;
+  font-size:19px;
+  line-height:1.14;
+  color:#5c6977;
+}
+
+.mensaje strong{
+  color:var(--azul);
+}
+
+.elefante{
+  display:block;
+  width:min(85%,270px);
+  margin:6px auto 12px;
+  animation:flotar 5s ease-in-out infinite;
+}
+
+/* =================================
+   FECHA, HORA Y LUGAR
+================================= */
+
+.detalles{
+  position:relative;
+  margin-top:12px;
+  padding:14px 0 0;
+}
+
+/*
+  JIRAFA CORREGIDA
+
+  - Se coloca al costado derecho.
+  - A la altura de la fecha y la hora.
+  - No ocupa una fila propia.
+  - Mantiene su imagen completa.
+  - No invade el texto central.
+*/
+
+.jirafa{
+  position:absolute;
+  z-index:1;
+
+  top:28px;
+  right:-8px;
+
+  width:clamp(66px,19vw,92px);
+  max-width:none;
+  height:auto;
+
+  display:block;
+  pointer-events:none;
+}
+
+/* DATOS CENTRADOS */
+
+.detalle{
+  width:100%;
+  display:grid;
+  grid-template-columns:52px minmax(0,1fr) 52px;
+  align-items:center;
+  gap:10px;
+  margin:16px auto;
+  text-align:center;
+  position:relative;
+  z-index:2;
+}
+
+.detalle-icono{
+  width:48px;
+  height:48px;
+  border:1.5px solid #be9654d9;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--oro);
+  background:#fffaefcc;
+  margin:auto;
+}
+
+.detalle-icono svg{
+  width:22px;
+  height:22px;
+  stroke:currentColor;
+  fill:none;
+  stroke-width:1.9;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.detalle-dato{
+  min-width:0;
+  text-align:center;
+  font-size:20px;
+  line-height:1.1;
+  color:#5a6675;
+}
+
+.detalle-dato span,
+.detalle-dato strong{
+  display:block;
+}
+
+.detalle-dato strong{
+  font-size:23px;
+  color:#445771;
+  font-weight:700;
+}
+
+.detalle-dato .anio{
+  color:#718094;
+  font-size:17px;
+  margin-top:3px;
+}
+
+.detalle-dato .direccion{
+  font-size:19px;
+  line-height:1.15;
+  color:#5f6d7c;
+}
+
+.mapa{
+  display:inline-block;
+  margin-top:10px;
+  border:1px solid #c09a52;
+  border-radius:6px;
+  padding:8px 17px;
+  background:linear-gradient(135deg,#edd39c,#caa45f);
+  text-decoration:none;
+  color:#5a4724;
+  font-size:14px;
+  font-weight:600;
+}
+
+/* =================================
+   CUENTA REGRESIVA
+================================= */
+
+.contador-titulo{
+  font-size:18px;
+  letter-spacing:3px;
+  margin:20px auto 12px;
+  color:#5d6979;
+}
+
+.contador{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:7px;
+}
+
+.contador-caja{
+  border:1px solid #c6ad7a;
+  border-radius:14px 6px;
+  background:#f8f4ea;
+  padding:10px 2px;
+}
+
+.contador-caja strong{
+  display:block;
+  font-size:clamp(26px,7vw,34px);
+  line-height:1;
+  color:var(--azul);
+}
+
+.contador-caja small{
+  font-size:11px;
+  color:#677588;
+}
+
+/* =================================
+   CONFIRMACIÓN
+================================= */
+
+.confirmacion{
+  margin-top:25px;
+}
+
+.confirmacion h2{
+  font-size:24px;
+  font-weight:500;
+  margin:0;
+  color:#4f6076;
+}
+
+.confirmacion>p{
+  font-size:19px;
+  margin:10px auto;
+}
+
+.aviso-invitacion{
+  max-width:330px;
+  margin:19px auto 21px;
+  padding:19px;
+  text-align:center;
+  background:linear-gradient(145deg,#fcfaf6,#f5f0e7);
+  border:1px solid #d4bd91;
+  border-radius:12px;
+  box-shadow:0 5px 15px #5f4d310f;
+}
+
+.aviso-icono{
+  display:block;
+  color:var(--oro);
+  font-size:24px;
+  line-height:1.1;
+  margin-bottom:7px;
+}
+
+.aviso-invitacion h3{
+  font-size:21px;
+  font-weight:600;
+  color:#385473;
+  margin:0 0 9px;
+}
+
+.aviso-invitacion p{
+  font-size:18px;
+  line-height:1.3;
+  color:#5e6a78;
+  margin:0;
+}
+
+.aviso-decoracion{
+  display:block;
+  color:var(--oro);
+  letter-spacing:3px;
+  font-size:13px;
+  margin-top:12px;
+}
+
+.whatsapp{
+  display:inline-block;
+  background:linear-gradient(#476791,#223c63);
+  border:2px solid #c1a164;
+  color:white;
+  text-decoration:none;
+  border-radius:30px;
+  padding:10px 28px;
+  font-size:19px;
+}
+
+.cebra{
+  display:block;
+  width:min(78%,220px);
+  margin:14px auto 0;
+}
+
+.gracias{
+  margin:8px 14px 0;
+  padding:15px;
+  background:#fcf9f2;
+  border:1px solid #c8af7d;
+  border-radius:16px;
+  font-size:19px;
+  line-height:1.15;
+}
+
+.gracias em{
+  display:block;
+  font:31px 'Great Vibes',cursive;
+  color:var(--azul);
+  margin-top:6px;
+}
+
+.pie{
+  margin:20px 0 0;
+  font-size:12px;
+  letter-spacing:2px;
+  color:#9f8a5a;
+}
+
+/* =================================
+   ANIMACIONES
+================================= */
+
+@keyframes flotar{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-8px)}
+}
+
+@keyframes aparecer{
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* =================================
+   ADAPTACIÓN A CELULARES
+================================= */
+
+@media(max-width:390px){
+
+  .portada{
+    padding:40px 13px 32px;
+  }
+
+  .escena{
+    width:min(91vw,345px);
+    height:345px;
+    margin-top:95px;
+  }
+
+  .globos{
+    --tamano-globos:216px;
+  }
+
+  .sobre{
+    height:208px;
+  }
+
+  .sello{
+    top:151px;
+  }
+
+  .cachorro{
+    width:111px;
+    bottom:8px;
+  }
+
+  .encabezado p{
+    font-size:clamp(23px,6vw,27px);
+  }
+
+  .deco-flor-izq{
+    width:132px;
+    left:-54px;
+  }
+
+  .deco-globos-izq{
+    width:110px;
+    left:-34px;
+  }
+
+  .deco-flor-der{
+    width:108px;
+    right:-18px;
+  }
+
+  .subtitulo{
+    font-size:13px;
+    letter-spacing:1.8px;
+  }
+
+  .nombre{
+    font-size:clamp(65px,17vw,78px);
+    margin-top:33px;
+  }
+
+  /* JIRAFA ADAPTADA */
+
+  .jirafa{
+    width:76px;
+    right:-7px;
+    top:33px;
+  }
+
+  .detalle{
+    grid-template-columns:46px minmax(0,1fr) 46px;
+    gap:6px;
+  }
+
+  .detalle-icono{
+    width:44px;
+    height:44px;
+  }
+
+  .detalle-dato{
+    font-size:19px;
+  }
+
+  .detalle-dato strong{
+    font-size:22px;
+  }
+}
+
+@media(max-width:350px){
+
+  .escena{
+    height:327px;
+    margin-top:90px;
+  }
+
+  .globos{
+    --tamano-globos:200px;
+  }
+
+  .sobre{
+    height:199px;
+  }
+
+  .sello{
+    top:145px;
+    width:58px;
+    height:58px;
+  }
+
+  .cachorro{
+    width:104px;
+  }
+
+  .encabezado p{
+    font-size:22px;
+  }
+
+  .subtitulo{
+    font-size:12px;
+    letter-spacing:1.3px;
+  }
+
+  .nombre{
+    font-size:63px;
+    margin-top:31px;
+  }
+
+  .jirafa{
+    width:64px;
+    right:-8px;
+    top:35px;
+  }
+
+  .detalle{
+    grid-template-columns:42px minmax(0,1fr) 42px;
+    gap:4px;
+  }
+
+  .detalle-icono{
+    width:40px;
+    height:40px;
+  }
+
+  .detalle-icono svg{
+    width:19px;
+    height:19px;
+  }
+
+  .detalle-dato strong{
+    font-size:20px;
+  }
+
+  .detalle-dato .direccion{
+    font-size:17px;
+  }
+
+  .aviso-invitacion{
+    padding:16px 13px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,
+  *::before,
+  *::after{
+    animation:none!important;
+    transition:none!important;
+    scroll-behavior:auto!important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- MÚSICA AUTOMÁTICA EN BUCLE -->
+
+<audio
+  id="musicaFondo"
+  src="assets/musica.mp3"
+  preload="auto"
+  loop
+></audio>
+
+<main class="pagina">
+
+<!-- =================================
+   PORTADA
+================================= -->
+
+<section id="inicio" class="papel">
+
+  <img
+    class="flor-esquina"
+    src="assets/flores.webp"
+    alt=""
+  >
+
+  <img
+    class="flor-inferior"
+    src="assets/flores.webp"
+    alt=""
+  >
+
+  <div class="portada">
+
+    <div class="encabezado">
+
+      <span class="corona">♛</span>
+
+      <div class="adornito">
+        ──── ♥ ────
+      </div>
+
+      <p>
+        Algo maravilloso<br>
+        está por llegar.
+
+        <strong>
+          Descubre la dulce<br>
+          espera...
+        </strong>
+      </p>
+
+      <div class="adornito">
+        ──── ♥ ────
+      </div>
+
+    </div>
+
+    <div class="escena">
+
+      <img
+        class="globos"
+        src="assets/globos.webp"
+        alt="Globos azules"
+      >
+
+      <button
+        class="sobre-boton"
+        id="abrirSobre"
+        type="button"
+        aria-label="Abrir invitación"
+      >
+
+        <span class="sobre">
+          <span class="pliegue izq"></span>
+          <span class="pliegue der"></span>
+          <span class="pliegue abajo"></span>
+          <span class="solapa"></span>
+          <span class="linea-interior"></span>
+        </span>
+
+        <span class="sello">♛</span>
+
+        <img
+          class="cachorro"
+          src="assets/cachorro.webp"
+          alt="Cachorro de safari"
+        >
+
+      </button>
+
+    </div>
+
+    <div class="indicacion">
+      TOCA EL SOBRE
+      <small>❧ ♥ ❧</small>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =================================
+   INVITACIÓN INTERIOR
+================================= -->
+
+<article
+  id="invitacion"
+  class="papel"
+  aria-hidden="true"
+>
+
+  <img
+    class="deco-flor-izq"
+    src="assets/flores.webp"
+    alt=""
+  >
+
+  <img
+    class="deco-globos-izq"
+    src="assets/globos.webp"
+    alt=""
+  >
+
+  <img
+    class="deco-flor-der"
+    src="assets/flores.webp"
+    alt=""
+  >
+
+  <div class="contenido">
+
+    <div class="corona-interior">♛</div>
+
+    <p class="subtitulo">
+      CELEBRAMOS LA LLEGADA DE
+    </p>
+
+    <h1 id="nombreBebe" class="nombre">
+      <span>Noah</span>
+      <span>Valentín</span>
+    </h1>
+
+    <div class="orno-nombre">❧ ♥ ❧</div>
+
+    <p class="mensaje">
+      Hay un pequeño corazón que ya llena
+      nuestras vidas de amor.
+
+      <strong id="nombreMensaje">
+        Noah Valentín
+      </strong>
+
+      está por llegar y no podemos esperar
+      para conocerlo, abrazarlo y comenzar
+      esta nueva aventura juntos.
+    </p>
+
+    <div class="orno-nombre">♥</div>
+
+    <img
+      class="elefante"
+      src="assets/elefante.webp"
+      alt="Elefantito azul"
+    >
+
+    <!-- =================================
+       DATOS DEL EVENTO
+    ================================= -->
+
+    <section class="detalles">
+
+      <!--
+        LA JIRAFA AHORA ESTÁ A LA DERECHA,
+        A LA ALTURA DE LA FECHA Y LA HORA.
+        NO OCUPA UNA FILA SEPARADA.
+      -->
+
+      <img
+        class="jirafa"
+        src="assets/jirafa.webp"
+        alt="Jirafa azul"
+      >
+
+      <!-- FECHA -->
+
+      <div class="detalle">
+
+        <div class="detalle-icono" aria-hidden="true">
+
+          <svg viewBox="0 0 24 24">
+            <rect x="4" y="5" width="16" height="15" rx="2"></rect>
+            <path d="M8 3v4M16 3v4M4 9h16"></path>
+          </svg>
+
+        </div>
+
+        <div class="detalle-dato">
+
+          <span id="diaEvento">
+            Sábado
+          </span>
+
+          <strong id="fechaEvento">
+            19 de diciembre
+          </strong>
+
+          <span id="anioEvento" class="anio">
+            de 2026
+          </span>
+
+        </div>
+
+        <span aria-hidden="true"></span>
+
+      </div>
+
+      <!-- HORA -->
+
+      <div class="detalle">
+
+        <div class="detalle-icono" aria-hidden="true">
+
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="8"></circle>
+            <path d="M12 8v4l3.5 1.8"></path>
+          </svg>
+
+        </div>
+
+        <div class="detalle-dato">
+
+          <strong id="horaEvento">
+            6:30 PM
+          </strong>
+
+        </div>
+
+        <span aria-hidden="true"></span>
+
+      </div>
+
+      <!-- UBICACIÓN -->
+
+      <div class="detalle">
+
+        <div class="detalle-icono" aria-hidden="true">
+
+          <svg viewBox="0 0 24 24">
+            <path d="M12 20s-6-5.4-6-10a6 6 0 1 1 12 0c0 4.6-6 10-6 10z"></path>
+            <circle cx="12" cy="10" r="2.2"></circle>
+          </svg>
+
+        </div>
+
+        <div class="detalle-dato">
+
+          <span
+            id="direccionEvento"
+            class="direccion"
+          >
+            Gral. Cordova 391,
+            Villa María del Triunfo
+          </span>
+
+          <a
+            id="enlaceMapa"
+            class="mapa"
+            href="#"
+            target="_blank"
+            rel="noopener"
+          >
+            Ver ubicación
+          </a>
+
+        </div>
+
+        <span aria-hidden="true"></span>
+
+      </div>
+
+    </section>
+
+    <!-- CUENTA REGRESIVA -->
+
+    <section aria-label="Cuenta regresiva">
+
+      <div class="contador-titulo">
+        FALTAN
+      </div>
+
+      <div class="contador">
+
+        <div class="contador-caja">
+          <strong id="dias">00</strong>
+          <small>DÍAS</small>
+        </div>
+
+        <div class="contador-caja">
+          <strong id="horas">00</strong>
+          <small>HORAS</small>
+        </div>
+
+        <div class="contador-caja">
+          <strong id="minutos">00</strong>
+          <small>MINUTOS</small>
+        </div>
+
+        <div class="contador-caja">
+          <strong id="segundos">00</strong>
+          <small>SEGUNDOS</small>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- CONFIRMACIÓN -->
+
+    <section class="confirmacion">
+
+      <h2>Confirma tu asistencia</h2>
+
+      <div class="orno-nombre">❧ ♥ ❧</div>
+
+      <p>
+        ¡Nos alegrará contar con tu presencia!
+      </p>
+
+      <div class="aviso-invitacion">
+
+        <span class="aviso-icono">✉</span>
+
+        <h3>Una invitación especial para ti</h3>
+
+        <p>
+          Esta invitación es individual.
+          Si deseas asistir con acompañantes,
+          te agradeceremos que nos indiques
+          sus nombres al momento de confirmar
+          tu asistencia, para poder coordinar
+          con anticipación.
+        </p>
+
+        <span class="aviso-decoracion">
+          ❧ ♥ ❧
+        </span>
+
+      </div>
+
+      <a
+        id="enlaceWhatsapp"
+        class="whatsapp"
+        href="#"
+        target="_blank"
+        rel="noopener"
+      >
+        ☏ Confirmo
+      </a>
+
+      <img
+        class="cebra"
+        src="assets/cebra.webp"
+        alt="Cebrita azul"
+      >
+
+      <div class="gracias">
+
+        Tu presencia hará este día
+        aún más especial.
+
+        <em>
+          ¡Gracias por ser parte de este
+          momento tan importante!
+        </em>
+
+        ♥
+
+      </div>
+
+    </section>
+
+    <p class="pie">
+      CON MUCHO AMOR ♥
+    </p>
+
+  </div>
+
+</article>
+
+</main>
+
+<script>
+
+/* =================================
+   DATOS DEL EVENTO
+================================= */
+
+const evento = {
+
+  nombre:'Noah Valentín',
+
+  fecha:'2026-12-19T18:30:00-05:00',
+
+  dia:'Sábado',
+
+  fechaTexto:'19 de diciembre',
+
+  anio:'de 2026',
+
+  hora:'6:30 PM',
+
+  direccion:
+    'Gral. Cordova 391, Villa María del Triunfo',
+
+  mapa:
+    'https://google.com/maps?q=CANCHA+EL+BUNKER,+Gral.+Cordova+391,+Villa+María+del+Triunfo+15816&ftid=0x9105b9001868673b:0xa3baaf76e0a5853e&entry=gps&shh=CAE&lucs=,94297699,94231188,100821559,47071704,94218641,94282134,94286869,100820247,100822504,100838877,121816461&g_ep=CAISEjI2LjQ1LjEuMDExNzM4Mjc5MBgAINeCAypoLDk0Mjk3Njk5LDk0MjMxMTg4LDEwMDgyMTU1OSw0NzA3MTcwNCw5NDIxODY0MSw5NDI4MjEzNCw5NDI4Njg2OSwxMDA4MjAyNDcsMTAwODIyNTA0LDEwMDgzODg3NywxMjE4MTY0NjFCAlBF&skid=2db93af9-37e0-4e8a-b7a4-ef4012be6974&g_st=iw',
+
+  /* COLOCA AQUÍ TU WHATSAPP CON 51 */
+
+  whatsapp:''
+
+};
+
+/* =================================
+   REFERENCIAS
+================================= */
+
+const $ = id =>
+  document.getElementById(id);
+
+const musica = $('musicaFondo');
+
+musica.loop = true;
+
+/* NOMBRE */
+
+document.title =
+  'Baby Shower · ' + evento.nombre;
+
+const nombres =
+  evento.nombre.trim().split(/\s+/);
+
+$('nombreBebe').replaceChildren(
+
+  ...[
+    nombres[0],
+    nombres.slice(1).join(' ')
+  ]
+
+  .filter(Boolean)
+
+  .map(texto => {
+
+    const span = document.createElement('span');
+
+    span.textContent = texto;
+
+    return span;
+
+  })
+
+);
+
+$('nombreMensaje').textContent =
+  evento.nombre;
+
+/* FECHA, HORA Y LUGAR */
+
+$('diaEvento').textContent =
+  evento.dia;
+
+$('fechaEvento').textContent =
+  evento.fechaTexto;
+
+$('anioEvento').textContent =
+  evento.anio;
+
+$('horaEvento').textContent =
+  evento.hora;
+
+$('direccionEvento').textContent =
+  evento.direccion;
+
+$('enlaceMapa').href =
+  evento.mapa;
+
+/* =================================
+   CONFIRMACIÓN WHATSAPP
+================================= */
+
+const mensajeConfirmacion =
+
+  '¡Hola! Confirmo mi asistencia al Baby Shower de ' +
+  evento.nombre + '. 💙\n\n' +
+
+  'Mi nombre: \n\n' +
+
+  'Acompañantes adicionales (si corresponde): \n\n' +
+
+  'Cantidad total de asistentes (incluyéndome): ';
+
+$('enlaceWhatsapp').href =
+
+  'https://api.whatsapp.com/send?' +
+
+  (
+    evento.whatsapp
+      ? 'phone=' + encodeURIComponent(evento.whatsapp) + '&'
+      : ''
+  ) +
+
+  'text=' +
+  encodeURIComponent(mensajeConfirmacion);
+
+/* =================================
+   ABRIR SOBRE Y SONAR MÚSICA
+================================= */
+
+let abierto = false;
+
+$('abrirSobre').addEventListener('click',() => {
+
+  if(abierto) return;
+
+  abierto = true;
+
+  /* LA MÚSICA SE INICIA CON EL CLIC */
+
+  musica.volume = 0.7;
+  musica.loop = true;
+
+  musica.play().catch(error => {
+
+    console.warn(
+      'No se pudo iniciar el audio:',
+      error
+    );
+
+  });
+
+  /* ANIMACIÓN */
+
+  $('abrirSobre').classList.add('abierto');
+
+  setTimeout(() => {
+    $('inicio').classList.add('saliendo');
+  },650);
+
+  setTimeout(() => {
+
+    $('inicio').classList.add('oculto');
+
+    $('invitacion').classList.add('visible');
+
+    $('invitacion').setAttribute(
+      'aria-hidden','false'
+    );
+
+    window.scrollTo(0,0);
+
+  },1150);
+
+});
+
+/* =================================
+   CUENTA REGRESIVA
+================================= */
+
+function actualizarContador(){
+
+  let restante = Math.max(
+    0,
+    new Date(evento.fecha).getTime() - Date.now()
+  );
+
+  const dias =
+    Math.floor(restante/86400000);
+
+  restante %= 86400000;
+
+  const horas =
+    Math.floor(restante/3600000);
+
+  restante %= 3600000;
+
+  const minutos =
+    Math.floor(restante/60000);
+
+  restante %= 60000;
+
+  const segundos =
+    Math.floor(restante/1000);
+
+  const valores = [
+    dias,horas,minutos,segundos
+  ];
+
+  const ids = [
+    'dias','horas','minutos','segundos'
+  ];
+
+  valores.forEach((valor,i) => {
+
+    $(ids[i]).textContent =
+      String(valor).padStart(2,'0');
+
+  });
+
+}
+
+actualizarContador();
+
+setInterval(actualizarContador,1000);
+
+</script>
+
+</body>
+</html>
